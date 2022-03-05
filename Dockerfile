@@ -4,6 +4,7 @@ RUN \
     dnf update -y && \
     dnf install -y gcc git python39 python3-libselinux python39-devel sudo curl which && \
     dnf clean all && \
-    useradd ansible-test-user
+    useradd ansible-test-user && \
+    usermod -a -G wheel ansible-test-user
 
 ENV SHELL /bin/bash
